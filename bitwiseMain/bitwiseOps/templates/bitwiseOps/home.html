@@ -1,0 +1,82 @@
+
+<html>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+
+<head>
+
+    <title>
+
+        BITWISE HOME
+
+    </title>
+    
+    <link rel="stylesheet" href="{% static 'bitwiseOps/styles.css' %}">
+    <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h2 id="titulo">Bitwise Operations Explained</h2>
+
+    <div id="main">
+
+        <div>
+            <h4 class="main_space" id="text_in_main">Bitwise operations in C are used to directly manipulate the bits of a number. In computers, numbers are stored in binary (0s and 1s). Bitwise operators let you work with these bits. Here are the main bitwise operators:</h4>
+        </div>
+
+        <div class="main-space" id="buttons">
+
+            <div class="space" id="introduction1">
+                <h5>
+                    <pre>
+                        <a href="{% url 'and_op'%}">AND (&)</a>
+                        Compares each bit of two numbers.
+                        The result is 1 only if both bits are 1. Otherwise, it's 0.
+                    </pre>                    
+                </h5>
+            </div>
+
+            <div class="space" id="introduction2">
+            <form action="{% url 'or_op'%}">
+                <input type="submit" value="OR ( | )" />
+            </form>
+            </div>
+
+            <div class="space" id="introduction3">
+            <form action="{% url 'xor_op'%}">
+                <input type="submit" value="XOR (^)" />
+            </form>
+            </div>
+
+            <div class="space" id="introduction4">
+                <form action="{% url 'not_op'%}">
+                    <input type="submit" value="NOT (~)" />
+            </form>
+            </div>
+
+            <div class="space" id="introduction5">
+                <form action="{% url 'left_shift_op'%}">
+                    <input type="submit" value="LEFT SHIFT (<<)" />
+            </form>
+            </div>
+
+            <div class="space" id="introduction6">
+                <form action="{% url 'right_shift_op'%}">
+                    <input type="submit" value="LEFT SHIFT (>>)" />
+            </form>
+            </div>
+
+        </div>
+
+
+    </div>
+    
+</body>    
+  
+</html>

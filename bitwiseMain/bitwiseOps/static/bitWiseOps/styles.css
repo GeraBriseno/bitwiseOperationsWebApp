@@ -1,0 +1,29 @@
+#titulo{
+  text-align: center;
+}
+
+#text_in_main{
+  color: blue;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /*align-items: horizontal;*/
+}
+
+.main-space {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /*align-items: horizontal;*/
+  }
+
+.space {
+    overflow: hidden;
+    float: right;
+    /*display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;*/
+  }
