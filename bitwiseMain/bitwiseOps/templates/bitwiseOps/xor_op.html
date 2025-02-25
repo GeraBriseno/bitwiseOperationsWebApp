@@ -1,0 +1,87 @@
+
+<html>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+
+<head>
+
+    <title>
+
+        BITWISE HOME
+
+    </title>
+    
+    <link rel="stylesheet" href="{% static 'bitwiseOps/styles.css' %}">
+    <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h2 id="titulo">XOR (^)</h2>
+
+    <div class="main-space-div-class" id="main-and-op">
+
+        <div class="op-description-div-class" id="description-op-div-id">
+            <h4>
+                <pre>
+                    The XOR (^) bitwise operation is used to "toggle" a bit,
+                    bit toggling is changing a specific bit in a number
+                    to 0 if it is 1 or to 1 if it is 0 without affecting the other bits.
+                </pre>
+            </h4>
+        </div>
+
+        <div class="op-div-class" id="op-div-id">
+
+            <div class="op-example-div-class" id="op-exmaple-div-1-id">
+                <h5>
+                    <pre>
+                        Example:
+
+                        Number:   00000100   (4 in decimal) 
+
+                        We will be toggling the third bit in the number 4
+
+                        00000100
+                             ^
+                            
+                        number 4 looks like this using LEFT SHIFT (1<<3)
+                        
+                        the XOR operation: 4 ^ (1<<3) will give us 4 or 0, depending
+                        on its previous value
+
+                        This is what it looks like in C:
+
+                        #include "stdio.h"
+
+                            int main() {
+                                int num = 4;   // Binary: 00000100
+
+                                num = num ^ (1 << 3);  // 00000100 ^ 00000100
+                                printf("New number: %d\n", num); // Output: New number: 0
+
+                                num = num ^ (1 << 3);  // 00000000 ^ 00000100
+                                printf("New number: %d\n", num); // Output: New number: 4
+                                return 0;
+                            }
+                    </pre>                    
+                </h5>
+            </div>
+
+        </div>
+
+        <div>
+            <h4>Interactive part</h4>
+        </div>
+        
+
+    </div>
+    
+</body>    
+  
+</html>

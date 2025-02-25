@@ -1,0 +1,97 @@
+
+<html>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+
+<head>
+
+    <title>
+
+        BITWISE HOME
+
+    </title>
+    
+    <link rel="stylesheet" href="{% static 'bitwiseOps/styles.css' %}">
+    <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h2 id="titulo">AND (&)</h2>
+
+    <div class="main-space-div-class" id="main-and-op">
+
+        <div class="op-description-div-class" id="description-op-div-id">
+            <h4>
+                <pre>
+                    The AND (&) bitwise operation is used to "clear" a bit,
+                    bit clearing is changing a specific bit in a number to 0
+                    without affecting the other bits.
+                </pre>
+            </h4>
+        </div>
+
+        <div class="op-div-class" id="op-div-id">
+
+            <div class="op-example-div-class" id="op-exmaple-div-1-id">
+                <h5>
+                    <pre>
+                        Example:
+
+                        Number:   00000111   (7 in decimal)
+                        Goal:     00000101   (5 in decimal)
+
+                        To turn binary 7 into binary 5 we need to clear its second bit
+
+                        00000111
+                              ^
+
+                        To do this we need a bit mask that looks like this:
+                        
+                        111111101
+
+                        To obtain this mask we will LEFT SHIFT 1 by two positions (1<<2):
+                        this will give us this bit mask:
+                        
+                        00000010
+
+                        now we need to invert these bits by using NOT ~(1<<2)
+                        this gives us the bit mask we need 
+                        
+                        11111101 
+                        
+                        and we can use AND to clear the bit we need:
+                        
+                        7 & ~(1 << 2)
+
+                        This is what it looks like in C:
+
+                        #include "stdio.h"
+
+                            int main() {
+                                int num = 7;   // Binary: 00000111
+                                num = num & ~(1 << 2);  // 00000111 & 11111101
+                                printf("New number: %d\n", num); // Output: New number: 5
+                                return 0;
+                            }
+                    </pre>                    
+                </h5>
+            </div>
+
+        </div>
+
+        <div>
+            <h4>Interactive part</h4>
+        </div>
+        
+
+    </div>
+    
+</body>    
+  
+</html>

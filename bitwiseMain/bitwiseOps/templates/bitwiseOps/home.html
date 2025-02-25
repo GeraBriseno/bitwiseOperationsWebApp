@@ -26,13 +26,13 @@
 
     <div id="main">
 
-        <div>
-            <h4 class="main_space" id="text_in_main">Bitwise operations in C are used to directly manipulate the bits of a number. In computers, numbers are stored in binary (0s and 1s). Bitwise operators let you work with these bits. Here are the main bitwise operators:</h4>
+        <div class="main-text-div-class" id="main-text-div-id">
+            <h4>Bitwise operations in C are used to directly manipulate the bits of a number. In computers, numbers are stored in binary (0s and 1s). Bitwise operators let you work with these bits. Here are the main bitwise operators:</h4>
         </div>
 
-        <div class="main-space" id="buttons">
+        <div class="main-space-div-class" id="main-space-div-id">
 
-            <div class="space" id="introduction1">
+            <div class="op-shortdescription-div-class" id="op-shortdescription-div-1-id">
                 <h5>
                     <pre>
                         <a href="{% url 'and_op'%}">AND (&)</a>
@@ -42,38 +42,57 @@
                 </h5>
             </div>
 
-            <div class="space" id="introduction2">
-            <form action="{% url 'or_op'%}">
-                <input type="submit" value="OR ( | )" />
-            </form>
+            <div class="op-shortdescription-div-class" id="op-shortdescription-div-2-id">
+                <h5>
+                    <pre>
+                        <a href="{% url 'or_op'%}">OR ( | )</a>
+                        Compares each bit of two numbers.
+                        The result is 1 if at least one of the bits is 1.
+                    </pre>                    
+                </h5>
             </div>
 
-            <div class="space" id="introduction3">
-            <form action="{% url 'xor_op'%}">
-                <input type="submit" value="XOR (^)" />
-            </form>
+            <div class="op-shortdescription-div-class" id="op-shortdescription-div-3-id">
+                <h5>
+                    <pre>
+                        <a href="{% url 'xor_op'%}">XOR (^)</a>
+                        Compares each bit of two numbers.
+                        The result is 1 only if the bits are different.
+                    </pre>                    
+                </h5>
             </div>
 
-            <div class="space" id="introduction4">
-                <form action="{% url 'not_op'%}">
-                    <input type="submit" value="NOT (~)" />
-            </form>
+            <div class="op-shortdescription-div-class" id="op-shortdescription-div-4-id">
+                <h5>
+                    <pre>
+                        <a href="{% url 'not_op'%}">NOT (~)</a>
+                        Flips all the bits.
+                        1 becomes 0, and 0 becomes 1.
+                    </pre>                    
+                </h5>
             </div>
 
-            <div class="space" id="introduction5">
-                <form action="{% url 'left_shift_op'%}">
-                    <input type="submit" value="LEFT SHIFT (<<)" />
-            </form>
+            <div class="op-shortdescription-div-class" id="op-shortdescription-div-5-id">
+                <h5>
+                    <pre>
+                        <a href="{% url 'left_shift_op'%}">LEFT SHIFT (<<)</a>
+                        Moves bits to the left by a certain number of positions.
+                        Each shift to the left multiplies the number by 2.
+                    </pre>                    
+                </h5>
             </div>
 
-            <div class="space" id="introduction6">
-                <form action="{% url 'right_shift_op'%}">
-                    <input type="submit" value="LEFT SHIFT (>>)" />
-            </form>
+            <div class="op-shortdescription-div-class" id="op-shortdescription-div-6-id">
+                <h5>
+                    <pre>
+                        <a href="{% url 'right_shift_op'%}">RIGHT SHIFT (>>)</a>
+                        Moves bits to the right by a certain number of positions.
+                        Each shift to the right divides the number by 2.
+                    </pre>                    
+                </h5>
             </div>
 
         </div>
-
 
     </div>
     

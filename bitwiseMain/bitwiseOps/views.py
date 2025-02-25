@@ -6,13 +6,13 @@ def home(request):
     return render(request, "bitwiseOps/home.html")
 
 def and_op(request):
-    return HttpResponse("Compares each bit of two numbers. \n The result is 1 only if both bits are 1. Otherwise, it's 0.")
+    return render(request, "bitwiseOps/and_op.html")
 
 def or_op(request):
-    return HttpResponse("Compares each bit of two numbers. \n The result is 1 if at least one of the bits is 1.")
+    return render(request, "bitwiseOps/or_op.html")
 
 def xor_op(request):
-    return HttpResponse("Compares each bit of two numbers. \n The result is 1 only if the bits are different.")
+    return render(request, "bitwiseOps/xor_op.html")
 
 def not_op(request):
     return HttpResponse("Flips all the bits. \n 1 becomes 0, and 0 becomes 1.")

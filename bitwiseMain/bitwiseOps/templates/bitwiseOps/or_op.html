@@ -1,0 +1,92 @@
+
+<html>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+
+<head>
+
+    <title>
+
+        BITWISE HOME
+
+    </title>
+    
+    <link rel="stylesheet" href="{% static 'bitwiseOps/styles.css' %}">
+    <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h2 id="titulo">OR ( | )</h2>
+
+    <div class="main-space-div-class" id="main-and-op">
+
+        <div class="op-description-div-class" id="description-op-div-id">
+            <h4>
+                <pre>
+                    The OR (|) bitwise operation is used to "set" a bit,
+                    bit setting is changing a specific bit in a number to 1
+                    without affecting the other bits.
+                </pre>
+            </h4>
+        </div>
+
+        <div class="op-div-class" id="op-div-id">
+
+            <div class="op-example-div-class" id="op-exmaple-div-2-id">
+                <h5>
+                    <pre>
+                        Example:
+
+                        Number:   00001001   (9 in decimal)
+                        Goal:     00001111   (15 in decimal)
+
+                        To turn binary 9 into binary 15 we need to set its second and third bits
+
+                        00001001
+                             ^^
+
+                        To do this we need a bit mask that looks like this:
+                        
+                        00000110
+
+                        To obtain this mask we will LEFT SHIFT 3 by one position (3<<1)
+                        3 in binary is 00000011, if we shift it by one position to the left we get:
+
+                        00000110
+
+                        now we can use OR to set the bits we need:
+                        
+                        9 | (3 << 1)
+
+                        This is what it looks like in C:
+
+                        #include "stdio.h"
+
+                            int main() {
+                                int num = 9;   // Binary: 00001001
+                                num = num | (3 << 1);  // 00001001 | 00000110
+                                printf("New number: %d\n", num); // Output: New number: 15
+                                return 0;
+                            }
+                    </pre>                    
+                </h5>
+            </div>
+
+        </div>
+
+        <div>
+            <h4>Interactive part</h4>
+        </div>
+        
+
+    </div>
+    
+</body>    
+  
+</html>
