@@ -1,0 +1,135 @@
+
+<html>
+
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+
+<head>
+
+    <title>
+
+        RIGHT SHIFT BITWISE OPERATION
+
+    </title>
+    
+    <link rel="stylesheet" href="{% static 'bitwiseOps/styles.css' %}">
+    <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <h2 id="titulo">RIGHT SHIFT (>>)</h2>
+
+    <div class="main-space-div-class" id="main-and-op">
+
+        <div class="op-description-div-class" id="description-op-div-id">
+            <h4>
+                <pre>
+                    The RIGH SHIFT (>>) bitwise operation is used to "shift" bits to the right,
+                    bit shifting is changing the position of bits in a binary number.
+                    The positions left empty by the bits that get shifted are filled with 0s or 1s
+                    depending on if the integer is signed or unsigned,
+                    the bits that get shifted out on the right of the binary number are discarded.
+                    Mathematically, right shifting a number by n positions is the same as dividing
+                    that number by 2^n, (number>>n) = floor(number / 2^n)
+                    floor() rounds down a number to its nearest integer
+                </pre>
+            </h4>
+        </div>
+
+        <div class="op-div-class" id="op-div-id">
+
+            <div class="op-example-div-class" id="op-exmaple-div-1-id">
+                <h5>
+                    <pre>
+                        Example with an unsigned 8 bits integer:
+
+                        Number in 8 bits:   00010001   (17 in decimal)
+
+                        Lets right shift 16 by 3 positions (17>>3), this is the resulting binary:
+
+                        00000010
+                           ^  ^
+
+                        This number is equal to 2 in decimal.
+
+                        Mathematically: floor(17 / 2^3) = floor(17 / 8) = floor(2.125) = 2
+                        Same as with left shifting this formula does not apply when bits are discarded
+
+                        This is what it looks like in C:
+
+                        #include "stdio.h"
+
+                            int main() {
+                                uint8_t num = 16;   // Binary: 00000100
+                                num = (num >> 3);  // 00000010
+                                printf("New number: %d\n", num); // Output: New number: 2
+                                return 0;
+                            }
+                        
+                        
+                        Example with signed 8 bits integer:
+
+                        Usually signed numbers in binary are represented using 2s complement
+
+                        Lets see an example with the signed 8 bits integer -9
+
+                        To represent a number as 2s complements first we write the absolute number in
+                        binary:
+
+                        00001001
+
+                        Next we flip all its bits:
+
+                        11110110
+
+                        Then we add 1 to this flipped number:
+
+                        11110111
+
+                        The left most bit of a signed integer represents its sign:
+                        0 = positive integer
+                        1 = negative integer
+
+                        So the binary representation of -9 is 11110111
+
+                        If we right shift -9 by 2 positions (-9>>2) we get
+
+                        11111101
+
+                        This is equal to -3.
+
+                        For signed integers the mathematical formula (number>>n) = number / 2^n only applies
+                        if the signed integer is positive.
+
+                        This is what it looks like in C:
+
+                        #include "stdio.h"
+
+                            int main() {
+                                sint8_t num = -9;   // Binary: 11110111
+                                num = (num >> 2);  // 11111101
+                                printf("New number: %d\n", num); // Output: New number: -3
+                                return 0;
+                            }
+
+                    </pre>                    
+                </h5>
+            </div>
+
+        </div>
+
+        <div>
+            <h4>Interactive part</h4>
+        </div>
+        
+
+    </div>
+    
+</body>    
+  
+</html>

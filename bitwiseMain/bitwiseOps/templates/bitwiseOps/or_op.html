@@ -10,7 +10,7 @@
 
     <title>
 
-        BITWISE HOME
+        OR BITWISE OPERATION
 
     </title>
     
@@ -43,8 +43,8 @@
                     <pre>
                         Example:
 
-                        Number:   00001001   (9 in decimal)
-                        Goal:     00001111   (15 in decimal)
+                        Number in 8 bits:   00001001   (9 in decimal)
+                        Goal in 8 bits:     00001111   (15 in decimal)
 
                         To turn binary 9 into binary 15 we need to set its second and third bits
 
@@ -69,7 +69,7 @@
                         #include "stdio.h"
 
                             int main() {
-                                int num = 9;   // Binary: 00001001
+                                uint8_t num = 9;   // Binary: 00001001
                                 num = num | (3 << 1);  // 00001001 | 00000110
                                 printf("New number: %d\n", num); // Output: New number: 15
                                 return 0;

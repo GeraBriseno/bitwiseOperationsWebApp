@@ -10,7 +10,7 @@
 
     <title>
 
-        XOR BITWISE OPERATION
+        NOT BITWISE OPERATION
 
     </title>
     
@@ -22,16 +22,16 @@
 
 <body>
 
-    <h2 id="titulo">XOR (^)</h2>
+    <h2 id="titulo">NOT (~)</h2>
 
     <div class="main-space-div-class" id="main-and-op">
 
         <div class="op-description-div-class" id="description-op-div-id">
             <h4>
                 <pre>
-                    The XOR (^) bitwise operation is used to "toggle" a bit,
-                    bit toggling is changing a specific bit in a number
-                    to 0 if it is 1 or to 1 if it is 0 without affecting the other bits.
+                    The NOT (~) bitwise operation is used to "flip" a bit,
+                    bit flipping will change all bits in a number to their opposite
+                    (0 to 1, 1 to 0)
                 </pre>
             </h4>
         </div>
@@ -43,30 +43,22 @@
                     <pre>
                         Example:
 
-                        Number in 8 bits:   00000100   (4 in decimal) 
+                        Number in 8 bits:   00000111   (7 in decimal)
 
-                        We will be toggling the third bit in the number 4
-
-                        00000100
-                             ^
-                            
-                        number 4 looks like this using LEFT SHIFT (1<<3)
+                        We will be flipping all the bits in the number 7
                         
-                        the XOR operation: 4 ^ (1<<3) will give us 4 or 0, depending
-                        on its previous value
+                        with the NOT operation: ~(7) will give us 11111000
+                        that is 248 in decimal
 
                         This is what it looks like in C:
 
                         #include "stdio.h"
 
                             int main() {
-                                uint8_t num = 4;   // Binary: 00000100
+                                uint8_t num = 4;   // Binary: 00000111
 
-                                num = num ^ (1 << 3);  // 00000100 ^ 00000100
-                                printf("New number: %d\n", num); // Output: New number: 0
-
-                                num = num ^ (1 << 3);  // 00000000 ^ 00000100
-                                printf("New number: %d\n", num); // Output: New number: 4
+                                num = ~(num);  // 11111000
+                                printf("New number: %d\n", num); // Output: New number: 248
                                 return 0;
                             }
                     </pre>                    

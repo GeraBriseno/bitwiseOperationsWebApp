@@ -10,7 +10,7 @@
 
     <title>
 
-        BITWISE HOME
+        AND BITWISE OPERATION
 
     </title>
     
@@ -43,8 +43,8 @@
                     <pre>
                         Example:
 
-                        Number:   00000111   (7 in decimal)
-                        Goal:     00000101   (5 in decimal)
+                        Number in 8 bits:   00000111   (7 in decimal)
+                        Goal in 8 bits:     00000101   (5 in decimal)
 
                         To turn binary 7 into binary 5 we need to clear its second bit
 
@@ -53,7 +53,7 @@
 
                         To do this we need a bit mask that looks like this:
                         
-                        111111101
+                        11111101
 
                         To obtain this mask we will LEFT SHIFT 1 by two positions (1<<2):
                         this will give us this bit mask:
@@ -65,7 +65,7 @@
                         
                         11111101 
                         
-                        and we can use AND to clear the bit we need:
+                        and we can use AND to clear the second bit of 7:
                         
                         7 & ~(1 << 2)
 
@@ -74,7 +74,7 @@
                         #include "stdio.h"
 
                             int main() {
-                                int num = 7;   // Binary: 00000111
+                                uint8_t num = 7;   // Binary: 00000111
                                 num = num & ~(1 << 2);  // 00000111 & 11111101
                                 printf("New number: %d\n", num); // Output: New number: 5
                                 return 0;

@@ -15,10 +15,10 @@ def xor_op(request):
     return render(request, "bitwiseOps/xor_op.html")
 
 def not_op(request):
-    return HttpResponse("Flips all the bits. \n 1 becomes 0, and 0 becomes 1.")
+    return render(request, "bitwiseOps/not_op.html")
 
 def left_shift_op(request):
-    return HttpResponse("Moves bits to the left by a certain number of positions. \n Each shift to the left multiplies the number by 2.")
+    return render(request, "bitwiseOps/leftshift_op.html")
 
 def right_shift_op(request):
-    return HttpResponse("Moves bits to the right by a certain number of positions. \n Each shift to the right divides the number by 2.")
+    return render(request, "bitwiseOps/rightshift_op.html")
