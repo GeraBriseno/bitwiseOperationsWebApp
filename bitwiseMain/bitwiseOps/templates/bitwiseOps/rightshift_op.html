@@ -32,7 +32,7 @@
                     The RIGH SHIFT (>>) bitwise operation is used to "shift" bits to the right,
                     bit shifting is changing the position of bits in a binary number.
                     The positions left empty by the bits that get shifted are filled with 0s or 1s
-                    depending on if the integer is signed or unsigned,
+                    depending on if the integer is unsigned or signed positive or negative,
                     the bits that get shifted out on the right of the binary number are discarded.
                     Mathematically, right shifting a number by n positions is the same as dividing
                     that number by 2^n, (number>>n) = floor(number / 2^n)
@@ -50,7 +50,7 @@
 
                         Number in 8 bits:   00010001   (17 in decimal)
 
-                        Lets right shift 16 by 3 positions (17>>3), this is the resulting binary:
+                        Lets right shift 17 by 3 positions (17>>3), this is the resulting binary:
 
                         00000010
                            ^  ^
@@ -58,7 +58,8 @@
                         This number is equal to 2 in decimal.
 
                         Mathematically: floor(17 / 2^3) = floor(17 / 8) = floor(2.125) = 2
-                        Same as with left shifting this formula does not apply when bits are discarded
+
+                        All of this also applies for positive signed integers
 
                         This is what it looks like in C:
 
@@ -72,13 +73,13 @@
                             }
                         
                         
-                        Example with signed 8 bits integer:
+                        Example with negative signed 8 bits integer:
 
-                        Usually signed numbers in binary are represented using 2s complement
+                        Usually negative signed numbers in binary are represented using 2s complement
 
                         Lets see an example with the signed 8 bits integer -9
 
-                        To represent a number as 2s complements first we write the absolute number in
+                        To represent a number using 2s complements first we write the absolute number in
                         binary:
 
                         00001001
@@ -103,8 +104,8 @@
 
                         This is equal to -3.
 
-                        For signed integers the mathematical formula (number>>n) = number / 2^n only applies
-                        if the signed integer is positive.
+                        For signed integers the mathematical formula (number>>n) = floor(number / 2^n)
+                        only applies if the signed integer is positive.
 
                         This is what it looks like in C:
 
