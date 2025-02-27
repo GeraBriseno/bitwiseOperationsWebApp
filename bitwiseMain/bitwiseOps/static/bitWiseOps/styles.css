@@ -1,49 +1,83 @@
-#titulo{
-  text-align: center;
-}
 
-#main > .main-text-div-class {
-  color: blue;
-  width: 60%;
-  box-sizing: border-box;
-  margin: 0 auto;
+body {
+  display: flex;
+  justify-content: center;
+  width: 80%;
   text-align: left;
-}
-
-.main-space-div-class {
-  width: 80%;   /* Makes all child divs take the full width of #main */
-  box-sizing: border-box;  /* Includes padding and border in the width */
-  margin: 0 auto;
-  text-align: left;
-  overflow: hidden;
-
   display: flex;
   flex-direction: column;
+  padding-left: 20%;
+  padding-top: 2.5%;
+  gap: 5%;  /* Adds space between elements */
 }
 
-.main-space-div-class > .op-shortdescription-div-class {
+.op-description-div-class {
   width: 100%;
-  box-sizing: border-box;
-  overflow: hidden;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  }
-
-.op-shortdescription-div-class > h5 > pre {
-  /*width: 100%;
-  box-sizing: border-box;*/
-  overflow: hidden;
-  display: block;
-  flex-direction: column;
-  padding: 0;
-  margin: 0;
-  text-align: left;
+  justify-content: center;
+  gap: 20px;
 }
 
-.space {
-    overflow: hidden;
-    float: right;
-  }
+.op-description-div-class > h4 {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.example-pre {
+  /*font-family: 'Courier New', Courier, monospace;*/  /* Monospaced font */
+  white-space: pre-wrap;   /* Preserves whitespace and wraps text */
+  word-break: break-word;  /* Breaks long words to maintain alignment */
+  overflow-x: hidden;      /* No horizontal scrollbar */
+  overflow-y: auto;        /* Adds vertical scrollbar if needed */
+  /*padding: 10px;*/
+  width: 85%;              /* Sets width to 85% of the screen */
+  max-width: 85%;
+  box-sizing: border-box;
+  tab-size: 4;             /* Consistent tab spacing */
+  text-align: left;
+  margin: 0 auto;          /* Centers the <pre> block */
+}
+
+.description-pre {
+  /*font-family: 'Courier New', Courier, monospace;*/  /* Monospaced font */
+  white-space: pre-line;   /* Preserves whitespace and wraps text */
+  word-break: break-word;  /* Breaks long words to maintain alignment */
+  overflow-x: hidden;      /* No horizontal scrollbar */
+  overflow-y: auto;        /* Adds vertical scrollbar if needed */
+  /*padding: 10px;*/
+  width: 85%;              /* Sets width to 85% of the screen */
+  max-width: 85%;
+  box-sizing: border-box;
+  tab-size: 4;             /* Consistent tab spacing */
+  text-align: left;
+  margin: 0 auto;          /* Centers the <pre> block */
+}
+
+.highlight_bit {
+  color: red;            /* Change text color */
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
+
+.highlight_bit_2 {
+  color: blue;            /* Change text color */
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
+
+.highlight_byte {            /* Change text color */
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
+
+.important {
+  color: blue;
+  font-size: 1.1em;
+  font-style: italic;
+}

@@ -22,80 +22,66 @@
 
 <body>
 
-    <h2 id="titulo">LEFT SHIFT (<<)</h2>
-
-    <div class="main-space-div-class" id="main-and-op">
-
         <div class="op-description-div-class" id="description-op-div-id">
             <h4>
-                <pre>
-                    The LEFT SHIFT (<<) bitwise operation is used to "shift" bits to the left,
-                    bit shifting is changing the position of bits in a binary number.
-                    The positions left empty by the bits that get shifted are filled with 0s,
-                    the bits that get shifted out on the left of the binary number are discarded.
-                    Mathematically, left shifting a number by n positions is the same as multiplying
-                    that number by 2^n.
+                <pre class="description-pre">
+The LEFT SHIFT (&lt;&lt;) bitwise operation is used to "shift" bits to the left, bit shifting is changing the position of bits in a binary number.
+The positions left empty by the bits that get shifted are filled with 0s, the bits that get shifted out on the left of the binary number are discarded.
+Mathematically, left shifting a number by n positions is the same as multiplying that number by 2^n.
 
                 </pre>
             </h4>
         </div>
 
         <div class="op-div-class" id="op-div-id">
-
-            <div class="op-example-div-class" id="op-exmaple-div-1-id">
                 <h5>
-                    <pre>
-                        Example:
+                    <pre class="example-pre">
+Example:
 
-                        Number in 8 bits:   00000100   (4 in decimal)
+Number in 8 bits:   <span class="highlight_byte">00000100</span>   (4 in decimal)
 
-                        Lets left shift 4 by 3 positions (4<<3), this is the resulting binary:
+Lets left shift 4 by 3 positions (4&lt;&lt;3), this is the resulting binary:
 
-                        00100000
-                          ^  ^
+<span class="highlight_byte">00</span><span class="highlight_bit">1</span><span class="highlight_byte">00</span><span class="highlight_bit">0</span></span><span class="highlight_byte">00</span>
 
-                        This number is equal to 32 in decimal.
+This number is equal to 32 in decimal.
 
-                        Mathematically: 4 * 2^3 = 4 * 8 = 32
+Mathematically: 4 * 2^3 = 4 * 8 = 32
 
-                        This is what it looks like in C:
+This is what it looks like in C:
 
-                        #include "stdio.h"
+#include "stdio.h"
 
-                            int main() {
-                                uint8_t num = 4;   // Binary: 00000100
-                                num = (num << 3);  // 00100000
-                                printf("New number: %d\n", num); // Output: New number: 248
-                                return 0;
-                            }
-                        
-                        Example with discarded bits:
+    int main() {
+        uint8_t num = 4;   // Binary: 00000100
+        num = (num &lt;&lt; 3);  // 00100000
+        printf("New number: %d\n", num); // Output: New number: 248
+        return 0;
+    }
 
-                        Number in 8 bits:   10000010   (130 in decimal)
+Example with discarded bits:
 
-                        Lets left shift 130 by 2 positions (130<<2), this is the resulting binary:
+Number in 8 bits:   <span class="highlight_bit_2">1</span><span class="highlight_byte">00000</span><span class="highlight_bit">1</span><span class="highlight_byte">0</span>   (130 in decimal)
 
-                        00001000
+Lets left shift 130 by 2 positions (130&lt;&lt;2), this is the resulting binary:
 
-                        This number is equal to 8 in decimal.
-                        
-                        Notice how the bit in the eighth position with a value of 1 got discarded.
+<span class="highlight_byte">0000</span><span class="highlight_bit">1</span><span class="highlight_byte">000</span>
 
-                        When bits are discarded the mathematical formula (number<<n) = number * 2^n
-                        does not apply.
+This number is equal to 8 in decimal.
+
+Notice how the <span class="highlight_bit_2">bit in the eighth position</span> with a value of 1 got discarded.
+
+When bits are discarded the mathematical formula (number&lt;&lt;n) = number * 2^n
+does not apply.
 
                     </pre>                    
                 </h5>
-            </div>
 
         </div>
 
         <div>
             <h4>Interactive part</h4>
         </div>
-        
-
-    </div>
     
 </body>    
   

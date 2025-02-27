@@ -22,66 +22,59 @@
 
 <body>
 
-    <h2 id="titulo">AND (&)</h2>
-
-    <div class="main-space-div-class" id="main-and-op">
-
         <div class="op-description-div-class" id="description-op-div-id">
             <h4>
                 <pre>
-                    The AND (&) bitwise operation is used to "clear" a bit,
-                    bit clearing is changing a specific bit in a number to 0
-                    without affecting the other bits.
+The AND (&) bitwise operation is used to "clear" a bit,
+bit clearing is changing a specific bit in a number to 0
+without affecting the other bits.
                 </pre>
             </h4>
         </div>
 
         <div class="op-div-class" id="op-div-id">
+            <h5>
+                <pre>
+Example:
 
-            <div class="op-example-div-class" id="op-exmaple-div-1-id">
-                <h5>
-                    <pre>
-                        Example:
+Number in 8 bits:   <span class="highlight_byte">00000111</span>   (7 in decimal)
+Goal in 8 bits:     <span class="highlight_byte">00000101</span>   (5 in decimal)
 
-                        Number in 8 bits:   00000111   (7 in decimal)
-                        Goal in 8 bits:     00000101   (5 in decimal)
+To turn binary 7 into binary 5 we need to clear its second bit
 
-                        To turn binary 7 into binary 5 we need to clear its second bit
+<span class="highlight_byte">000001</span><span class="highlight_bit">1</span><span class="highlight_byte">1</span>
 
-                        00000111
-                              ^
+To do this we need a bit mask that looks like this:
 
-                        To do this we need a bit mask that looks like this:
-                        
-                        11111101
+<span class="highlight_byte">11111101</span>
 
-                        To obtain this mask we will LEFT SHIFT 1 by two positions (1<<2):
-                        this will give us this bit mask:
-                        
-                        00000010
+To obtain this mask we will LEFT SHIFT 1 by two positions (1&lt;&lt;2):
+this will give us this bit mask:
 
-                        now we need to invert these bits by using NOT ~(1<<2)
-                        this gives us the bit mask we need 
-                        
-                        11111101 
-                        
-                        and we can use AND to clear the second bit of 7:
-                        
-                        7 & ~(1 << 2)
+<span class="highlight_byte">00000010</span>
 
-                        This is what it looks like in C:
+now we need to invert these bits by using NOT ~(1&lt;&lt;2)
+this gives us the bit mask we need 
 
-                        #include "stdio.h"
+<span class="highlight_byte">111111</span><span class="highlight_bit">0</span><span class="highlight_byte">1</span> 
 
-                            int main() {
-                                uint8_t num = 7;   // Binary: 00000111
-                                num = num & ~(1 << 2);  // 00000111 & 11111101
-                                printf("New number: %d\n", num); // Output: New number: 5
-                                return 0;
-                            }
-                    </pre>                    
-                </h5>
-            </div>
+and we can use AND to clear the second bit of 7:
+
+7 & ~(1&lt;&lt;2)
+
+This is what it looks like in C:
+
+#include "stdio.h"
+
+    int main() {
+        uint8_t num = 7;   // Binary: 00000111
+        num = num & ~(1&lt;&lt;2);  // 00000111 & 11111101
+        printf("New number: %d\n", num); // Output: New number: 5
+        return 0;
+    }
+                </pre>                        
+            
+            </h5>
 
         </div>
 
@@ -89,8 +82,6 @@
             <h4>Interactive part</h4>
         </div>
         
-
-    </div>
     
 </body>    
   
