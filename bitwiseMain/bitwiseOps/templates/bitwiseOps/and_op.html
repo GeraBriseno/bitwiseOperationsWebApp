@@ -24,17 +24,15 @@
 
         <div class="op-description-div-class" id="description-op-div-id">
             <h4>
-                <pre>
-The AND (&) bitwise operation is used to "clear" a bit,
-bit clearing is changing a specific bit in a number to 0
-without affecting the other bits.
+                <pre class="description-pre">
+The AND (&) bitwise operation is used to "clear" a bit, bit clearing is changing a specific bit in a number to 0 without affecting the other bits.
                 </pre>
             </h4>
         </div>
 
         <div class="op-div-class" id="op-div-id">
             <h5>
-                <pre>
+                <pre class="example-pre">
 Example:
 
 Number in 8 bits:   <span class="highlight_byte">00000111</span>   (7 in decimal)
@@ -64,13 +62,13 @@ and we can use AND to clear the second bit of 7:
 
 This is what it looks like in C:
 
-#include "stdio.h"
+<span class="keyword">#include</span> <span class="string">"stdio.h"</span>
 
-    int main() {
-        uint8_t num = 7;   // Binary: 00000111
-        num = num & ~(1&lt;&lt;2);  // 00000111 & 11111101
-        printf("New number: %d\n", num); // Output: New number: 5
-        return 0;
+<span class="type">int</span> <span class="function">main</span><span class="braces">() {</span>
+    <span class="type">uint8_t</span> <span class="variable">num</span> =  <span class="value">7</span>;   <span class="comment">// Binary: 00000111</span>
+    <span class="variable">num</span> = <span class="variable">num</span> & ~(1&lt;&lt;2);  <span class="comment">// 00000111 & 11111101</span>
+        <span class="function">printf</span><span class="braces">(</span><span class="string">"New number: %d\n"</span>, <span class="variable">num</span><span class="braces">)</span>; <span class="comment">// Output: New number: 5</span>
+        <span class="keyword">return</span> 0;
     }
                 </pre>                        
             

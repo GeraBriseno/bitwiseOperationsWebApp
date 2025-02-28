@@ -11,13 +11,17 @@ body {
   gap: 5%;  /* Adds space between elements */
 }
 
+#header_main {
+  text-align: center;
+}
+
 .op-description-div-class {
   width: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  /*gap: 20px;*/
 }
 
 .op-description-div-class > h4 {
@@ -25,8 +29,24 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  /*gap: 20px;*/
+}
 
+.main-text-div-class {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*gap: 20px;*/
+}
+
+.main-text-div-class > h4 {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  /*gap: 20px;*/
 }
 
 .example-pre {
@@ -59,6 +79,37 @@ body {
   margin: 0 auto;          /* Centers the <pre> block */
 }
 
+.main-text-pre {
+  /*font-family: 'Courier New', Courier, monospace;*/  /* Monospaced font */
+  white-space: pre-line;   /* Preserves whitespace and wraps text */
+  word-break: break-word;  /* Breaks long words to maintain alignment */
+  overflow-x: hidden;      /* No horizontal scrollbar */
+  overflow-y: auto;        /* Adds vertical scrollbar if needed */
+  padding-left: 10%;
+  width: 85%;              /* Sets width to 85% of the screen */
+  max-width: 85%;
+  box-sizing: border-box;
+  tab-size: 4;             /* Consistent tab spacing */
+  text-align: left;
+  margin: 0 auto;          /* Centers the <pre> block */
+}
+
+.main-page-description-pre {
+  /*font-family: 'Courier New', Courier, monospace;*/  /* Monospaced font */
+  white-space: pre-line;   /* Preserves whitespace and wraps text */
+  word-break: break-word;  /* Breaks long words to maintain alignment */
+  overflow-x: hidden;      /* No horizontal scrollbar */
+  overflow-y: auto;        /* Adds vertical scrollbar if needed */
+  /*padding-left: 20%;
+  padding-right: 20%;*/
+  width: 60%;              /* Sets width to 85% of the screen */
+  max-width: 85%;
+  box-sizing: border-box;
+  tab-size: 4;             /* Consistent tab spacing */
+  text-align: left;
+  margin: 0 auto;          /* Centers the <pre> block */
+}
+
 .highlight_bit {
   color: red;            /* Change text color */
   font-size: 1.1em;      /* Slightly increase font size */
@@ -80,4 +131,38 @@ body {
   color: blue;
   font-size: 1.1em;
   font-style: italic;
+}
+
+
+.keyword {
+  color: rgb(204, 27, 204);
+}
+
+.string {
+  color: orange;
+}
+
+.function {
+  color: rgb(146, 146, 16);
+}
+
+.braces {
+  color: black;
+}
+
+.type {
+  color: blue;
+  font-weight: bold;
+}
+
+.variable {
+  color: #4ec9b0;
+}
+
+.value {
+  color:black;
+}
+
+.comment {
+  color:green;
 }

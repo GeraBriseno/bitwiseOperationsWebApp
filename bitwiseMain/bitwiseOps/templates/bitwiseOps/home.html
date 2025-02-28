@@ -22,19 +22,21 @@
 
 <body>
 
-    <h2 id="titulo">Bitwise Operations Explained</h2>
-
-    <div id="main">
+    <h2 id="header_main">Bitwise Operations Explained</h2>
 
         <div class="main-text-div-class" id="main-text-div-id">
-            <h4>Bitwise operations in C are used to directly manipulate the bits of a number. In computers, numbers are stored in binary (0s and 1s). Bitwise operators let you work with these bits. Here are the main bitwise operators:</h4>
+            <h4>
+                <pre class="main-text-pre">
+                    Bitwise operations in C are used to directly manipulate the bits of a number. In computers, numbers are stored in binary (0s and 1s). Bitwise operators let you work with these bits. Here are the main bitwise operators:
+                </pre>
+            </h4>
         </div>
 
         <div class="main-space-div-class" id="main-space-div-id">
 
             <div class="op-shortdescription-div-class" id="op-shortdescription-div-1-id">
                 <h5>
-                    <pre>
+                    <pre class="main-page-description-pre">
                         <a href="{% url 'and_op'%}">AND (&)</a>
                         Compares each bit of two numbers.
                         The result is 1 only if both bits are 1. Otherwise, it's 0.
@@ -44,7 +46,7 @@
 
             <div class="op-shortdescription-div-class" id="op-shortdescription-div-2-id">
                 <h5>
-                    <pre>
+                    <pre class="main-page-description-pre">
                         <a href="{% url 'or_op'%}">OR ( | )</a>
                         Compares each bit of two numbers.
                         The result is 1 if at least one of the bits is 1.
@@ -54,7 +56,7 @@
 
             <div class="op-shortdescription-div-class" id="op-shortdescription-div-3-id">
                 <h5>
-                    <pre>
+                    <pre class="main-page-description-pre">
                         <a href="{% url 'xor_op'%}">XOR (^)</a>
                         Compares each bit of two numbers.
                         The result is 1 only if the bits are different.
@@ -64,7 +66,7 @@
 
             <div class="op-shortdescription-div-class" id="op-shortdescription-div-4-id">
                 <h5>
-                    <pre>
+                    <pre class="main-page-description-pre">
                         <a href="{% url 'not_op'%}">NOT (~)</a>
                         Flips all the bits.
                         1 becomes 0, and 0 becomes 1.
@@ -74,7 +76,7 @@
 
             <div class="op-shortdescription-div-class" id="op-shortdescription-div-5-id">
                 <h5>
-                    <pre>
+                    <pre class="main-page-description-pre">
                         <a href="{% url 'left_shift_op'%}">LEFT SHIFT (<<)</a>
                         Moves bits to the left by a certain number of positions.
                         Each shift to the left multiplies the number by 2.
@@ -84,7 +86,7 @@
 
             <div class="op-shortdescription-div-class" id="op-shortdescription-div-6-id">
                 <h5>
-                    <pre>
+                    <pre class="main-page-description-pre">
                         <a href="{% url 'right_shift_op'%}">RIGHT SHIFT (>>)</a>
                         Moves bits to the right by a certain number of positions.
                         Each shift to the right divides the number by 2.
@@ -93,8 +95,6 @@
             </div>
 
         </div>
-
-    </div>
     
 </body>    
   

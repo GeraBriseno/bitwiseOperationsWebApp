@@ -24,35 +24,32 @@
 
         <div class="op-description-div-class" id="description-op-div-id">
             <h4>
-                <pre>
-The OR (|) bitwise operation is used to "set" a bit,
-bit setting is changing a specific bit in a number to 1
-without affecting the other bits.
+                <pre class="description-pre">
+The OR (|) bitwise operation is used to "set" a bit, bit setting is changing a specific bit in a number to 1 without affecting the other bits.
                 </pre>
             </h4>
         </div>
 
         <div class="op-div-class" id="op-div-id">
                 <h5>
-                    <pre>
+                    <pre class="example-pre">
 Example:
 
-Number in 8 bits:   00001001   (9 in decimal)
-Goal in 8 bits:     00001111   (15 in decimal)
+Number in 8 bits:   <span class="highlight_byte">00001001</span>   (9 in decimal)
+Goal in 8 bits:     <span class="highlight_byte">00001111</span>   (15 in decimal)
 
 To turn binary 9 into binary 15 we need to set its second and third bits
 
-00001001
-     ^^
+<span class="highlight_byte">00001</span><span class="highlight_bit">00</span><span class="highlight_byte">1</span>
 
 To do this we need a bit mask that looks like this:
 
-00000110
+<span class="highlight_byte">00000110</span>
 
 To obtain this mask we will LEFT SHIFT 3 by one position (3&lt;&lt;1)
 3 in binary is 00000011, if we shift it by one position to the left we get:
 
-00000110
+<span class="highlight_byte">00000</span><span class="highlight_bit">11</span><span class="highlight_byte">0</span>
 
 now we can use OR to set the bits we need:
 
