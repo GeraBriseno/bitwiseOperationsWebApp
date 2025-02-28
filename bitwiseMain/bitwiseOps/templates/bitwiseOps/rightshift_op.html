@@ -18,6 +18,10 @@
     <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+
 </head>
 
 <body>
@@ -51,7 +55,7 @@ Mathematically: floor(17 / 2^3) = floor(17 / 8) = floor(2.125) = 2
 All of this also applies for positive signed integers
 
 This is what it looks like in C:
-
+<pre><code class="language-c">
 #include "stdio.h"
 
     int main() {
@@ -60,7 +64,7 @@ This is what it looks like in C:
         printf("New number: %d\n", num); // Output: New number: 2
         return 0;
     }
-
+</code></pre>
 
 Example with negative signed 8 bits integer:
 
@@ -97,7 +101,7 @@ For signed integers the mathematical formula (number>>n) = floor(number / 2^n)
 only applies if the signed integer is positive.
 
 This is what it looks like in C:
-
+<pre><code class="language-c">
 #include "stdio.h"
 
     int main() {
@@ -106,7 +110,7 @@ This is what it looks like in C:
         printf("New number: %d\n", num); // Output: New number: -3
         return 0;
     }
-
+</code></pre>
                     </pre>                    
                 </h5>
 

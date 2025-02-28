@@ -18,6 +18,10 @@
     <script src="{% static 'bitwiseOps/jscript.js' %}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+
 </head>
 
 <body>
@@ -43,7 +47,7 @@ with the NOT operation: ~(7) will give us <span class="highlight_byte">11111000<
 that is 248 in decimal
 
 This is what it looks like in C:
-
+<pre><code class="language-c">
 #include "stdio.h"
 
     int main() {
@@ -53,6 +57,7 @@ This is what it looks like in C:
         printf("New number: %d\n", num); // Output: New number: 248
         return 0;
     }
+</code></pre>
                     </pre>                    
                 </h5>
 
