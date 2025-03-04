@@ -50,19 +50,19 @@ To do this we need a bit mask that looks like this:
 
 <span class="highlight_byte">11111101</span>
 
-To obtain this mask we will LEFT SHIFT 1 by two positions (1&lt;&lt;2):
+To obtain this mask we will LEFT SHIFT 1 by one position (1&lt;&lt;1):
 this will give us this bit mask:
 
 <span class="highlight_byte">00000010</span>
 
-now we need to invert these bits by using NOT ~(1&lt;&lt;2)
+now we need to invert these bits by using NOT ~(1&lt;&lt;1)
 this gives us the bit mask we need 
 
 <span class="highlight_byte">111111</span><span class="highlight_bit">0</span><span class="highlight_byte">1</span> 
 
 and we can use AND to clear the second bit of 7:
 
-7 & ~(1&lt;&lt;2)
+7 & ~(1&lt;&lt;1)
 
 This is what it looks like in C:
 <pre><code class="language-c">
@@ -70,7 +70,7 @@ This is what it looks like in C:
 
 int main() {
     uint8_t num = 7;   // Binary: 00000111
-    num = num & ~(1&lt;&lt;2);  // 00000111 & 11111101
+    num = num & ~(1&lt;&lt;1);  // 00000111 & 11111101
     printf("New number: %d\n", num); // Output: New number: 5
     return 0;
 }</code></pre>

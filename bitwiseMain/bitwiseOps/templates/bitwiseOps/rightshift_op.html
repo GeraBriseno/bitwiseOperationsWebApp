@@ -59,7 +59,7 @@ This is what it looks like in C:
 #include "stdio.h"
 
     int main() {
-        uint8_t num = 16;   // Binary: 00000100
+        uint8_t num = 17;   // Binary: 00010001
         num = (num >> 3);  // 00000010
         printf("New number: %d\n", num); // Output: New number: 2
         return 0;
@@ -75,25 +75,25 @@ Lets see an example with the signed 8 bits integer -9
 To represent a number using 2s complements first we write the absolute number in
 binary:
 
-00001001
+<span class="highlight_byte">00001001</span>
 
 Next we flip all its bits:
 
-11110110
+<span class="highlight_byte">11110110</span>
 
-Then we add 1 to this flipped number:
+Then we add <span class="highlight_bit">1</span> to this flipped binary:
 
-11110111
+<span class="highlight_byte">11110</span><span class="highlight_byte">11</span><span class="highlight_bit">1</span>
 
 The left most bit of a signed integer represents its sign:
 0 = positive integer
 1 = negative integer
 
-So the binary representation of -9 is 11110111
+So the binary representation of -9 is <span class="highlight_byte">1111</span><span class="highlight_bit">0</span><span class="highlight_byte">111</span>
 
 If we right shift -9 by 2 positions (-9>>2) we get
 
-11111101
+<span class="highlight_byte">111111</span><span class="highlight_bit">0</span><span class="highlight_byte">1</span>
 
 This is equal to -3.
 

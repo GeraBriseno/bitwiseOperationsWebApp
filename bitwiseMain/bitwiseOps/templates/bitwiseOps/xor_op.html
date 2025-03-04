@@ -45,9 +45,9 @@ We will be toggling the third bit in the number 4
 
 <span class="highlight_byte">00000</span><span class="highlight_bit">1</span><span class="highlight_byte">00</span>
     
-number 4 looks like this using LEFT SHIFT (1&lt;&lt;3)
+number 4 looks like this using LEFT SHIFT (1&lt;&lt;2)
 
-the XOR operation: 4 ^ (1&lt;&lt;3) will give us 4 or 0, depending
+the XOR operation: 4 ^ (1&lt;&lt;2) will give us 4 or 0, depending
 on its previous value
 
 This is what it looks like in C:
@@ -57,10 +57,10 @@ This is what it looks like in C:
     int main() {
         uint8_t num = 4;   // Binary: 00000100
 
-        num = num ^ (1&lt;&lt;3);  // 00000100 ^ 00000100
+        num = num ^ (1&lt;&lt;2);  // 00000100 ^ 00000100
         printf("New number: %d\n", num); // Output: New number: 0
 
-        num = num ^ (1&lt;&lt;3);  // 00000000 ^ 00000100
+        num = num ^ (1&lt;&lt;2);  // 00000000 ^ 00000100
         printf("New number: %d\n", num); // Output: New number: 4
         return 0;
     }
