@@ -133,36 +133,3 @@ body {
   font-style: italic;
 }
 
-
-.keyword {
-  color: rgb(204, 27, 204);
-}
-
-.string {
-  color: orange;
-}
-
-.function {
-  color: rgb(146, 146, 16);
-}
-
-.braces {
-  color: black;
-}
-
-.type {
-  color: blue;
-  font-weight: bold;
-}
-
-.variable {
-  color: #4ec9b0;
-}
-
-.value {
-  color:black;
-}
-
-.comment {
-  color:green;
-}
