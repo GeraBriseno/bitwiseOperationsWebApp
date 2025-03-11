@@ -128,11 +128,20 @@ body {
 }
 
 .important {
-  color: blue;
-  font-size: 1.1em;
-  font-style: italic;
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
 }
 
+.bitButton {
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
 
+.decimalByte {
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
 
 /*INTERACTIVE PART*/
+
+/*button.link { background:none; border:none; }*/
