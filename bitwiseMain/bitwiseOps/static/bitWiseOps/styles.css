@@ -137,6 +137,16 @@ body {
   font-weight: bold;
 }
 
+.bitByte3 {
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
+
+.opButton {
+  font-size: 1.1em;      /* Slightly increase font size */
+  font-weight: bold;
+}
+
 .decimalByte {
   font-size: 1.1em;      /* Slightly increase font size */
   font-weight: bold;
