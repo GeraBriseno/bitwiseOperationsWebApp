@@ -6,6 +6,14 @@ var byte1Decimal = 0;
 var byte2Decimal = 0;
 var byte3Decimal = 0;
 
+var andButtonState = 0;
+var orButtonState = 0;
+var xorButtonState = 0;
+var notButtonState = 0;
+var leftButtonState = 0;
+var rightButtonState = 0;
+var opButtonPressed = 0;
+
 function iterateOverByte(byteElement){
 
     var byteBits = byteElement.children;
@@ -86,7 +94,19 @@ window.addEventListener("load", function() {
 function andButtonFunc(andButton, bitsByte3, byte3DecimalElement){
 
     andButton.onclick = function()
-    {
+    {   
+        if(0 == andButtonState && 0 == opButtonPressed)
+        {
+            this.style.background = '#04AA6D';
+            andButtonState = 1;
+            opButtonPressed = 1;
+        }
+        else if(1 == andButtonState && 1 == opButtonPressed)
+        {   
+            this.style.background = '';
+            andButtonState = 0;
+            opButtonPressed = 0;
+        }
 
         for(var i = 0; i < byte1Array.length; i++)
         {
@@ -113,6 +133,18 @@ function orButtonFunc(orButton, bitsByte3, byte3DecimalElement){
 
     orButton.onclick = function()
     {
+        if(0 == orButtonState && 0 == opButtonPressed)
+        {
+            this.style.background = '#04AA6D';
+            orButtonState = 1;
+            opButtonPressed = 1;
+        }
+        else if(1 == orButtonState && 1 == opButtonPressed)
+        {   
+            this.style.background = '';
+            orButtonState = 0;
+            opButtonPressed = 0;
+        }
 
         for(var i = 0; i < byte1Array.length; i++)
         {
@@ -138,7 +170,19 @@ function orButtonFunc(orButton, bitsByte3, byte3DecimalElement){
 function xorButtonFunc(xorButton, bitsByte3, byte3DecimalElement){
 
     xorButton.onclick = function()
-    {
+    {   
+        if(0 == xorButtonState && 0 == opButtonPressed)
+        {
+            this.style.background = '#04AA6D';
+            xorButtonState = 1;
+            opButtonPressed = 1;
+        }
+        else if(1 == xorButtonState && 1 == opButtonPressed)
+        {   
+            this.style.background = '';
+            xorButtonState = 0;
+            opButtonPressed = 0;
+        }
 
         for(var i = 0; i < byte1Array.length; i++)
         {
@@ -165,6 +209,18 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
 
     notButton.onclick = function()
     {
+        if(0 == notButtonState && 0 == opButtonPressed)
+        {
+            this.style.background = '#04AA6D';
+            notButtonState = 1;
+            opButtonPressed = 1;
+        }
+        else if(1 == notButtonState && 1 == opButtonPressed)
+        {   
+            this.style.background = '';
+            notButtonState = 0;
+            opButtonPressed = 0;
+        }
 
         for(var i = 0; i < byte1Array.length; i++)
         {
@@ -201,6 +257,18 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement){
 
     leftButton.onclick = function()
     {
+        if(0 == leftButtonState && 0 == opButtonPressed)
+        {
+            this.style.background = '#04AA6D';
+            leftButtonState = 1;
+            opButtonPressed = 1;
+        }
+        else if(1 == leftButtonState && 1 == opButtonPressed)
+        {   
+            this.style.background = '';
+            leftButtonState = 0;
+            opButtonPressed = 0;
+        }
 
         for(var i = 1; i < byte1Array.length; i++)
         {
@@ -222,6 +290,18 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement){
 
     rightButton.onclick = function()
     {
+        if(0 == rightButtonState && 0 == opButtonPressed)
+        {
+            this.style.background = '#04AA6D';
+            rightButtonState = 1;
+            opButtonPressed = 1;
+        }
+        else if(1 == rightButtonState && 1 == opButtonPressed)
+        {   
+            this.style.background = '';
+            rightButtonState = 0;
+            opButtonPressed = 0;
+        }
 
         for(var i = byte1Array.length-1; i > 0; i--)
         {
@@ -244,7 +324,7 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement){
     {
         //On click for all bit buttons
         bitButtons[i].onclick = function()
-        {
+        {   
             
             //If the displayed bit value is 0
             if(Number(this.innerHTML) == 0)
