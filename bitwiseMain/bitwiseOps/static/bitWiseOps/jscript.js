@@ -76,11 +76,11 @@ window.addEventListener("load", function() {
 
     bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement);
 
-    andButtonFunc(andButton, bitsByte3, byte3DecimalElement);
+    andButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement);
 
-    orButtonFunc(orButton, bitsByte3, byte3DecimalElement);
+    orButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement);
 
-    xorButtonFunc(xorButton, bitsByte3, byte3DecimalElement);
+    xorButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement);
 
     notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byte3DecimalElement);
 
@@ -91,21 +91,18 @@ window.addEventListener("load", function() {
 });
 
 
-function andButtonFunc(andButton, bitsByte3, byte3DecimalElement){
+function andButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement){
 
     andButton.onclick = function()
     {   
-        if(0 == andButtonState && 0 == opButtonPressed)
+        if(0 == andButtonState)
         {
-            this.style.background = '#04AA6D';
             andButtonState = 1;
-            opButtonPressed = 1;
-        }
-        else if(1 == andButtonState && 1 == opButtonPressed)
-        {   
-            this.style.background = '';
-            andButtonState = 0;
-            opButtonPressed = 0;
+            this.style.background = '#04AA6D';
+            orButtonState = 0;
+            orButton.style.background = '';
+            xorButtonState = 0;
+            xorButton.style.background = '';
         }
 
         for(var i = 0; i < byte1Array.length; i++)
@@ -129,21 +126,18 @@ function andButtonFunc(andButton, bitsByte3, byte3DecimalElement){
 
 };
 
-function orButtonFunc(orButton, bitsByte3, byte3DecimalElement){
+function orButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement){
 
     orButton.onclick = function()
     {
-        if(0 == orButtonState && 0 == opButtonPressed)
+        if(0 == orButtonState)
         {
-            this.style.background = '#04AA6D';
             orButtonState = 1;
-            opButtonPressed = 1;
-        }
-        else if(1 == orButtonState && 1 == opButtonPressed)
-        {   
-            this.style.background = '';
-            orButtonState = 0;
-            opButtonPressed = 0;
+            this.style.background = '#04AA6D';
+            andButtonState = 0;
+            andButton.style.background = '';
+            xorButtonState = 0;
+            xorButton.style.background = '';
         }
 
         for(var i = 0; i < byte1Array.length; i++)
@@ -167,21 +161,18 @@ function orButtonFunc(orButton, bitsByte3, byte3DecimalElement){
 
 };
 
-function xorButtonFunc(xorButton, bitsByte3, byte3DecimalElement){
+function xorButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement){
 
     xorButton.onclick = function()
     {   
-        if(0 == xorButtonState && 0 == opButtonPressed)
+        if(0 == xorButtonState)
         {
-            this.style.background = '#04AA6D';
             xorButtonState = 1;
-            opButtonPressed = 1;
-        }
-        else if(1 == xorButtonState && 1 == opButtonPressed)
-        {   
-            this.style.background = '';
-            xorButtonState = 0;
-            opButtonPressed = 0;
+            this.style.background = '#04AA6D';
+            andButtonState = 0;
+            andButton.style.background = '';
+            orButtonState = 0;
+            orButton.style.background ='';
         }
 
         for(var i = 0; i < byte1Array.length; i++)
@@ -209,18 +200,6 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
 
     notButton.onclick = function()
     {
-        if(0 == notButtonState && 0 == opButtonPressed)
-        {
-            this.style.background = '#04AA6D';
-            notButtonState = 1;
-            opButtonPressed = 1;
-        }
-        else if(1 == notButtonState && 1 == opButtonPressed)
-        {   
-            this.style.background = '';
-            notButtonState = 0;
-            opButtonPressed = 0;
-        }
 
         for(var i = 0; i < byte1Array.length; i++)
         {
@@ -257,18 +236,6 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement){
 
     leftButton.onclick = function()
     {
-        if(0 == leftButtonState && 0 == opButtonPressed)
-        {
-            this.style.background = '#04AA6D';
-            leftButtonState = 1;
-            opButtonPressed = 1;
-        }
-        else if(1 == leftButtonState && 1 == opButtonPressed)
-        {   
-            this.style.background = '';
-            leftButtonState = 0;
-            opButtonPressed = 0;
-        }
 
         for(var i = 1; i < byte1Array.length; i++)
         {
@@ -290,18 +257,6 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement){
 
     rightButton.onclick = function()
     {
-        if(0 == rightButtonState && 0 == opButtonPressed)
-        {
-            this.style.background = '#04AA6D';
-            rightButtonState = 1;
-            opButtonPressed = 1;
-        }
-        else if(1 == rightButtonState && 1 == opButtonPressed)
-        {   
-            this.style.background = '';
-            rightButtonState = 0;
-            opButtonPressed = 0;
-        }
 
         for(var i = byte1Array.length-1; i > 0; i--)
         {
