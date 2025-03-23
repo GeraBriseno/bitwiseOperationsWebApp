@@ -74,7 +74,7 @@ window.addEventListener("load", function() {
     var leftButton = document.getElementById('leftButton-id');
     var rightButton = document.getElementById('rightButton-id');
 
-    bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement);
+    bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bitsByte3, byte3DecimalElement);
 
     andButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement);
 
@@ -82,11 +82,11 @@ window.addEventListener("load", function() {
 
     xorButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalElement);
 
-    notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byte3DecimalElement);
+    notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byte3DecimalElement, bitsByte3, byte3DecimalElement);
 
-    leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement);
+    leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, byte3DecimalElement);
 
-    rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement)
+    rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3, byte3DecimalElement)
     
 });
 
@@ -228,11 +228,72 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
         }
+
+        if(andButtonState == 1){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] == 1 && byte1Array[i] == byte2Array[i])
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
+        else if(orButtonState == 1){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] == 1 || byte2Array[i] == 1)
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
+        else if(xorButtonState){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] != byte2Array[i])
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
     }
 
 };
 
-function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement){
+function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, byte3DecimalElement){
 
     leftButton.onclick = function()
     {
@@ -249,11 +310,71 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement){
         bitsByte1[7].innerHTML = 0;
         byte1Decimal = parseInt(byte1Array.join(''), 2);
         byte1DecimalElement.innerHTML = byte1Decimal;
+
+        if(andButtonState == 1){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] == 1 && byte1Array[i] == byte2Array[i])
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
+        else if(orButtonState == 1){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] == 1 || byte2Array[i] == 1)
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
+        else if(xorButtonState){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] != byte2Array[i])
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
     }
 
 };
 
-function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement){
+function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3, byte3DecimalElement){
 
     rightButton.onclick = function()
     {
@@ -270,11 +391,71 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement){
         bitsByte1[0].innerHTML = 0;
         byte1Decimal = parseInt(byte1Array.join(''), 2);
         byte1DecimalElement.innerHTML = byte1Decimal;
+
+        if(andButtonState == 1){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] == 1 && byte1Array[i] == byte2Array[i])
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
+        else if(orButtonState == 1){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] == 1 || byte2Array[i] == 1)
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
+
+        else if(xorButtonState){
+            for(var i = 0; i < byte1Array.length; i++)
+            {
+                if(byte1Array[i] != byte2Array[i])
+                {
+                    byte3Array[i] = 1;
+                    bitsByte3[i].innerHTML = 1;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+                else
+                {
+                    byte3Array[i] = 0;
+                    bitsByte3[i].innerHTML = 0;
+                    byte3Decimal = parseInt(byte3Array.join(''), 2);
+                    byte3DecimalElement.innerHTML = byte3Decimal;
+                }
+            }
+        }
     }
 
 };
 
-function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement){
+function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bitsByte3, byte3DecimalElement){
     for (var i = 0; i < bitButtons.length; i++)
     {
         //On click for all bit buttons
@@ -350,6 +531,66 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement){
 
                 }
 
+            }
+
+            if(andButtonState == 1){
+                for(var i = 0; i < byte1Array.length; i++)
+                {
+                    if(byte1Array[i] == 1 && byte1Array[i] == byte2Array[i])
+                    {
+                        byte3Array[i] = 1;
+                        bitsByte3[i].innerHTML = 1;
+                        byte3Decimal = parseInt(byte3Array.join(''), 2);
+                        byte3DecimalElement.innerHTML = byte3Decimal;
+                    }
+                    else
+                    {
+                        byte3Array[i] = 0;
+                        bitsByte3[i].innerHTML = 0;
+                        byte3Decimal = parseInt(byte3Array.join(''), 2);
+                        byte3DecimalElement.innerHTML = byte3Decimal;
+                    }
+                }
+            }
+
+            else if(orButtonState == 1){
+                for(var i = 0; i < byte1Array.length; i++)
+                {
+                    if(byte1Array[i] == 1 || byte2Array[i] == 1)
+                    {
+                        byte3Array[i] = 1;
+                        bitsByte3[i].innerHTML = 1;
+                        byte3Decimal = parseInt(byte3Array.join(''), 2);
+                        byte3DecimalElement.innerHTML = byte3Decimal;
+                    }
+                    else
+                    {
+                        byte3Array[i] = 0;
+                        bitsByte3[i].innerHTML = 0;
+                        byte3Decimal = parseInt(byte3Array.join(''), 2);
+                        byte3DecimalElement.innerHTML = byte3Decimal;
+                    }
+                }
+            }
+
+            else if(xorButtonState){
+                for(var i = 0; i < byte1Array.length; i++)
+                {
+                    if(byte1Array[i] != byte2Array[i])
+                    {
+                        byte3Array[i] = 1;
+                        bitsByte3[i].innerHTML = 1;
+                        byte3Decimal = parseInt(byte3Array.join(''), 2);
+                        byte3DecimalElement.innerHTML = byte3Decimal;
+                    }
+                    else
+                    {
+                        byte3Array[i] = 0;
+                        bitsByte3[i].innerHTML = 0;
+                        byte3Decimal = parseInt(byte3Array.join(''), 2);
+                        byte3DecimalElement.innerHTML = byte3Decimal;
+                    }
+                }
             }
 
         };
