@@ -154,4 +154,25 @@ body {
 
 /*INTERACTIVE PART*/
 
-/*button.link { background:none; border:none; }*/
+.interactive-pre {
+  /*font-family: 'Courier New', Courier, monospace;*/  /* Monospaced font */
+  white-space: pre-line;   /* Preserves whitespace and wraps text */
+  /*word-break: break-word;  /* Breaks long words to maintain alignment */
+  overflow-x: hidden;      /* No horizontal scrollbar */
+  overflow-y: auto;        /* Adds vertical scrollbar if needed */
+  /*padding: 10px;*/
+  width: 85%;              /* Sets width to 85% of the screen */
+  max-width: 85%;
+  box-sizing: border-box;
+  tab-size: 4;             /* Consistent tab spacing */
+  text-align: left;
+  margin: 0 auto;          /* Centers the <pre> block */
+}
+
+.bitButton {
+  background: #ADD8E6;
+}
+
+.bitByte3 {
+  background: #ADD8E6;
+}

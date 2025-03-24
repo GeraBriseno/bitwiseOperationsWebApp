@@ -111,6 +111,7 @@ function andButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalEl
             {
                 byte3Array[i] = 1;
                 bitsByte3[i].innerHTML = 1;
+                bitsByte3[i].style.background = '#FF7F7F';
                 byte3Decimal = parseInt(byte3Array.join(''), 2);
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
@@ -118,6 +119,7 @@ function andButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalEl
             {
                 byte3Array[i] = 0;
                 bitsByte3[i].innerHTML = 0;
+                bitsByte3[i].style.background = '#ADD8E6';
                 byte3Decimal = parseInt(byte3Array.join(''), 2);
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
@@ -146,6 +148,7 @@ function orButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalEle
             {
                 byte3Array[i] = 1;
                 bitsByte3[i].innerHTML = 1;
+                bitsByte3[i].style.background = '#FF7F7F';
                 byte3Decimal = parseInt(byte3Array.join(''), 2);
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
@@ -153,6 +156,7 @@ function orButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalEle
             {
                 byte3Array[i] = 0;
                 bitsByte3[i].innerHTML = 0;
+                bitsByte3[i].style.background = '#ADD8E6';
                 byte3Decimal = parseInt(byte3Array.join(''), 2);
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
@@ -181,6 +185,7 @@ function xorButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalEl
             {
                 byte3Array[i] = 1;
                 bitsByte3[i].innerHTML = 1;
+                bitsByte3[i].style.background = '#FF7F7F';
                 byte3Decimal = parseInt(byte3Array.join(''), 2);
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
@@ -188,6 +193,7 @@ function xorButtonFunc(andButton, orButton, xorButton, bitsByte3, byte3DecimalEl
             {
                 byte3Array[i] = 0;
                 bitsByte3[i].innerHTML = 0;
+                bitsByte3[i].style.background = '#ADD8E6';
                 byte3Decimal = parseInt(byte3Array.join(''), 2);
                 byte3DecimalElement.innerHTML = byte3Decimal;
             }
@@ -207,6 +213,7 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
             {
                 byte2Array[i] = 0;
                 bitsByte2[i].innerHTML = 0;
+                bitsByte2[i].style.background = '#ADD8E6';
                 byte2Decimal = parseInt(byte2Array.join(''), 2);
                 byte2DecimalElement.innerHTML = byte2Decimal;
 
@@ -219,6 +226,7 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
             {
                 byte2Array[i] = 1;
                 bitsByte2[i].innerHTML = 1;
+                bitsByte2[i].style.background = '#FF7F7F';
                 byte2Decimal = parseInt(byte2Array.join(''), 2);
                 byte2DecimalElement.innerHTML = byte2Decimal;
 
@@ -236,6 +244,7 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -243,6 +252,7 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -256,6 +266,7 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -263,19 +274,21 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
             }
         }
 
-        else if(xorButtonState){
+        else if(xorButtonState == 1){
             for(var i = 0; i < byte1Array.length; i++)
             {
                 if(byte1Array[i] != byte2Array[i])
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -283,6 +296,7 @@ function notButtonFunc(notButton, bitsByte2, bitsByte3, byte2DecimalElement, byt
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -304,10 +318,18 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, b
             byte1Array[i-1] = byte1Array[i];
             bitsByte1[i-1].innerHTML = byte1Array[i];
 
+            if(bitsByte1[i-1].innerHTML == 1){
+                bitsByte1[i-1].style.background = '#FF7F7F';
+            }
+            else{
+                bitsByte1[i-1].style.background = '#ADD8E6';
+            }
+
         }
 
         byte1Array[7] = 0;
         bitsByte1[7].innerHTML = 0;
+        bitsByte1[7].style.background = '#ADD8E6';
         byte1Decimal = parseInt(byte1Array.join(''), 2);
         byte1DecimalElement.innerHTML = byte1Decimal;
 
@@ -318,6 +340,7 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, b
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -325,6 +348,7 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, b
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -338,6 +362,7 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, b
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -345,19 +370,21 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, b
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
             }
         }
 
-        else if(xorButtonState){
+        else if(xorButtonState == 1){
             for(var i = 0; i < byte1Array.length; i++)
             {
                 if(byte1Array[i] != byte2Array[i])
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -365,6 +392,7 @@ function leftButtonFunc(leftButton, bitsByte1, byte1DecimalElement, bitsByte3, b
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -385,10 +413,18 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3,
             byte1Array[i] = byte1Array[i-1];
             bitsByte1[i].innerHTML = byte1Array[i-1];
 
+            if(bitsByte1[i].innerHTML == 1){
+                bitsByte1[i].style.background = '#FF7F7F';
+            }
+            else{
+                bitsByte1[i].style.background = '#ADD8E6';
+            }
+
         }
 
         byte1Array[0] = 0;
         bitsByte1[0].innerHTML = 0;
+        bitsByte1[0].style.background = '#ADD8E6';
         byte1Decimal = parseInt(byte1Array.join(''), 2);
         byte1DecimalElement.innerHTML = byte1Decimal;
 
@@ -399,6 +435,7 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3,
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -406,6 +443,7 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3,
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -419,6 +457,7 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3,
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -426,19 +465,21 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3,
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
             }
         }
 
-        else if(xorButtonState){
+        else if(xorButtonState == 1){
             for(var i = 0; i < byte1Array.length; i++)
             {
                 if(byte1Array[i] != byte2Array[i])
                 {
                     byte3Array[i] = 1;
                     bitsByte3[i].innerHTML = 1;
+                    bitsByte3[i].style.background = '#FF7F7F';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -446,6 +487,7 @@ function rightButtonFunc(rightButton, bitsByte1, byte1DecimalElement, bitsByte3,
                 {
                     byte3Array[i] = 0;
                     bitsByte3[i].innerHTML = 0;
+                    bitsByte3[i].style.background = '#ADD8E6';
                     byte3Decimal = parseInt(byte3Array.join(''), 2);
                     byte3DecimalElement.innerHTML = byte3Decimal;
                 }
@@ -468,6 +510,8 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                 
                 //Change its value to 1
                 this.innerHTML = 1;
+
+                this.style.background = '#FF7F7F';
 
                 //If we're on byte 1
                 if(this.id.substring(4,5) == "1"){
@@ -503,6 +547,8 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                 
                 //Change its value to 0
                 this.innerHTML = 0;
+
+                this.style.background = '#ADD8E6';
 
                 //If we're on byte 1
                 if(this.id.substring(4,5) == "1"){
@@ -540,6 +586,7 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                     {
                         byte3Array[i] = 1;
                         bitsByte3[i].innerHTML = 1;
+                        bitsByte3[i].style.background = '#FF7F7F';
                         byte3Decimal = parseInt(byte3Array.join(''), 2);
                         byte3DecimalElement.innerHTML = byte3Decimal;
                     }
@@ -547,6 +594,7 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                     {
                         byte3Array[i] = 0;
                         bitsByte3[i].innerHTML = 0;
+                        bitsByte3[i].style.background = '#ADD8E6';
                         byte3Decimal = parseInt(byte3Array.join(''), 2);
                         byte3DecimalElement.innerHTML = byte3Decimal;
                     }
@@ -560,6 +608,7 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                     {
                         byte3Array[i] = 1;
                         bitsByte3[i].innerHTML = 1;
+                        bitsByte3[i].style.background = '#FF7F7F';
                         byte3Decimal = parseInt(byte3Array.join(''), 2);
                         byte3DecimalElement.innerHTML = byte3Decimal;
                     }
@@ -567,19 +616,21 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                     {
                         byte3Array[i] = 0;
                         bitsByte3[i].innerHTML = 0;
+                        bitsByte3[i].style.background = '#ADD8E6';
                         byte3Decimal = parseInt(byte3Array.join(''), 2);
                         byte3DecimalElement.innerHTML = byte3Decimal;
                     }
                 }
             }
 
-            else if(xorButtonState){
+            else if(xorButtonState == 1){
                 for(var i = 0; i < byte1Array.length; i++)
                 {
                     if(byte1Array[i] != byte2Array[i])
                     {
                         byte3Array[i] = 1;
                         bitsByte3[i].innerHTML = 1;
+                        bitsByte3[i].style.background = '#FF7F7F';
                         byte3Decimal = parseInt(byte3Array.join(''), 2);
                         byte3DecimalElement.innerHTML = byte3Decimal;
                     }
@@ -587,6 +638,7 @@ function bitButtonsFunc(bitButtons, byte1DecimalElement, byte2DecimalElement, bi
                     {
                         byte3Array[i] = 0;
                         bitsByte3[i].innerHTML = 0;
+                        bitsByte3[i].style.background = '#ADD8E6';
                         byte3Decimal = parseInt(byte3Array.join(''), 2);
                         byte3DecimalElement.innerHTML = byte3Decimal;
                     }
